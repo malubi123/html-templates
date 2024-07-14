@@ -52,7 +52,7 @@
         async function submitTemplate() {
             const htmlContent = document.getElementById('html-content').value;
             try {
-                const response = await fetch('https://api.github.com/gists', {
+                const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/gists', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/vnd.github.v3+json',
@@ -86,7 +86,7 @@
             const templatesDiv = document.getElementById('templates');
             templatesDiv.innerHTML = '';
             try {
-                const response = await fetch('https://api.github.com/gists/public');
+                const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/gists/public');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
